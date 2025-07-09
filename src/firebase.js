@@ -1,4 +1,6 @@
 import { initializeApp } from "firebase/app";
+
+
 //to connect the firebase app to the firebase account 
 const firebaseConfig = {
   apiKey: "AIzaSyCg0Bcay1lkx18u66f69HQzc4QKqUFWCng",

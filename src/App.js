@@ -1,9 +1,16 @@
 import { getDatabase ,ref,set} from 'firebase/database';
+import {getAuth,createUserWithEmailAndPassword} from 'firebase/auth'
+import SignUpPage from './Components/pages';
 import {app} from './firebase'
 import './App.css';
 //user/saniya is the name of the root where we have to put the data
 const db=getDatabase(app);
+const auth=getAuth(app);
 function App() {
+  const signUp=()=>
+  {
+    createUserWithEmailAndPassword(auth,'saniyagarg@gmail.com','saniya123').then((value)=>console.log(value));
+  }
   const putData=()=>
   {
     set(ref(db,'users/saniya' ),{
@@ -14,8 +21,7 @@ function App() {
   }
   return (
     <div className="App">
-      <h1>My firebase app</h1>
-      <button className="button" onClick={putData}>Put data</button>
+      <SignUpPage/>
     </div>
   );
 }
