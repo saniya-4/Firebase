@@ -1,6 +1,7 @@
 import { getDatabase ,ref,set} from 'firebase/database';
 import {getAuth,createUserWithEmailAndPassword} from 'firebase/auth'
 import SignUpPage from './Components/pages';
+import SignInPage from './Components/SignIn'
 import {app} from './firebase'
 import './App.css';
 //user/saniya is the name of the root where we have to put the data
@@ -22,6 +23,7 @@ function App() {
   return (
     <div className="App">
       <SignUpPage/>
+      <SignInPage/>
     </div>
   );
 }
